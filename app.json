@@ -17,14 +17,20 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+    ,
+    
+  "expo": {
+    "name": "gs25-mobile",
+    "slug": "gs25-mobile",
+    "version": "1.0.0",
+    "sdkVersion": "XX.0.0",
+    "platforms": ["ios", "android", "web"]
+  }
+}
+
+    
     },
     "plugins": [
-      "expo-router",
       [
         "expo-splash-screen",
         {
@@ -39,4 +45,3 @@
       "typedRoutes": true
     }
   }
-}
