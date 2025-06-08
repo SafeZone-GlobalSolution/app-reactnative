@@ -16,32 +16,33 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
-    ,
-    
-  "expo": {
-    "name": "gs25-mobile",
-    "slug": "gs25-mobile",
-    "version": "1.0.0",
-    "sdkVersion": "XX.0.0",
-    "platforms": ["ios", "android", "web"]
+      "edgeToEdgeEnabled": true,
+      "expo": {
+        "name": "gs25-mobile",
+        "slug": "gs25-mobile",
+        "version": "1.0.0",
+        "sdkVersion": "XX.0.0",
+        "platforms": [
+          "ios",
+          "android",
+          "web"
+        ]
+      },
+      "package": "com.anonymous.gs25mobile"
+    }
+  },
+  "plugins": [
+    [
+      "expo-splash-screen",
+      {
+        "image": "./assets/images/splash-icon.png",
+        "imageWidth": 200,
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      }
+    ]
+  ],
+  "experiments": {
+    "typedRoutes": true
   }
 }
-
-    
-    },
-    "plugins": [
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
-  }

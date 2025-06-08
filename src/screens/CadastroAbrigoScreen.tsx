@@ -2,10 +2,13 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator } from 'react-native';
+
 
 export default function CadastroAbrigoScreen() {
   const navigation = useNavigation();
 
+  const [loading, setLoading] = useState(false);
   const [nome, setNome] = useState('');
   const [endereco, setEndereco] = useState('');
   const [capacidade, setCapacidade] = useState('');
@@ -16,21 +19,28 @@ export default function CadastroAbrigoScreen() {
       return;
     }
 
-    try {
-      const novoAbrigo = {
-        nome,
-        endereco,
-        capacidade: parseInt(capacidade),
-      };
+ setLoading(true);
 
-      await axios.post('http://localhost:5079/api/abrigo', novoAbrigo); // Altere se estiver em produção
+ const novoAbrigo = {
+   nome,
+   endereco,
+   capacidade: parseInt(capacidade), // se for string
+   disponivel: true,
+   latitude: 0,
+   longitude: 0
+ };
 
-      Alert.alert('Sucesso', 'Abrigo cadastrado com sucesso!');
-      navigation.goBack(); // Retorna para a tela anterior
-    } catch (error) {
-      Alert.alert('Erro', 'Erro ao cadastrar o abrigo.');
-      console.error(error);
-    }
+ try {
+   await axios.post('http://10.0.2.2:5079/api/abrigo', novoAbrigo);
+   Alert.alert('Sucesso', 'Abrigo cadastrado com sucesso!');
+   navigation.goBack();
+ } catch (error) {
+   Alert.alert('Erro', 'Erro ao cadastrar o abrigo.');
+   console.error("Erro detalhado:", error?.response || error?.message || error);
+ } finally {
+   setLoading(false);
+ }
+
   };
 
   return (
@@ -49,7 +59,7 @@ export default function CadastroAbrigoScreen() {
         keyboardType="numeric"
       />
 
-      <Button
+      <Button disabled={loading && <ActivityIndicator size="large" color="#0000ff" />}
         title="CADASTRAR ABRIGO"
         onPress={handleCadastro}
         disabled={!nome || !endereco || !capacidade}

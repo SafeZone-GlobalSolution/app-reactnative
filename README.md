@@ -1,54 +1,67 @@
-<<<<<<< HEAD
-# Welcome to your Expo app 👋
+# 📱 SafeZone App – Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é o aplicativo **SafeZone**, desenvolvido em React Native com integração à API RESTful em .NET. Ele permite o cadastro, listagem e gerenciamento de abrigos em situações de risco.
 
-## Get started
+---
+Grupo: Ander Kenji Kamada RM553449
+       Felipe Faria Semensato RM553415
+       José Alexandre de Farias Neto RM553973
+---
 
-1. Install dependencies
+## ✅ Requisitos
 
-   ```bash
-   npm install
-   ```
+### 🔧 Ferramentas obrigatórias:
+- [Node.js (LTS)](https://nodejs.org)
+- [Expo CLI](https://docs.expo.dev)
+- [Android Studio + Emulador Android configurado](https://developer.android.com/studio)
+- [.NET 7 SDK ou superior](https://dotnet.microsoft.com/download)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 Como rodar o projeto
 
-In the output, you'll find options to open the app in a
+### 1. Clone o repositório:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+git clone https://github.com/seu-usuario/seu-repo.git
+cd app-reactnative
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+# 2. Instale as dependências do app mobile:
 
-## Get a fresh project
+npm install
 
-When you're ready, run:
+# 3. Configure o IP da API no projeto
+Abra o arquivo:
+src/services/api.ts
 
-```bash
-npm run reset-project
-```
+Substitua:
+baseURL: 'http://localhost:5079/api'
+(se estiver rodando em emulador Android):
+Rode no terminal, ipconfig e vc saberá seu Ipv4, substituia por seu ip.
+baseURL: 'http://10.0.2.2:5079/api' (este é um exemplo com o ip do meu computador, no qual rodei o projeto pelo emulador)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+4. Execute a API
+Abra uma nova janela e clone o repositorio da API 
+git clone https://github.com/AnderKamada/SafeZoneAPI.git
 
-## Learn more
+No diretório da API:
+cd SafeZoneAPI
+dotnet run
 
-To learn more about developing your project with Expo, look at the following resources:
+Acesse o Swagger em:
+http://localhost:5079/swagger/index.html
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+5. Rode o app mobile
+npx expo start 
+Depois escolha a opção:
+Open with android (Rode o emulador para quando abrir com o android, ele abra o expo go)
 
-## Join the community
 
-Join our community of developers creating universal apps.
+📦 Funcionalidades implementadas
+- Login e registro com Firebase Auth
+- Persistência com @react-native-async-storage/async-storage
+- Cadastro de Abrigos (POST)
+- Listagem de Abrigos (GET)
+- Integração com API em .NET
+- Interface moderna com React Native
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-=======
-# app-reactnative
->>>>>>> d6d2ae5b06a11c5717e4d60a78ce0793384ca51f

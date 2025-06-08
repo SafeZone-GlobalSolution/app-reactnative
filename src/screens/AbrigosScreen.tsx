@@ -15,7 +15,8 @@ export default function AbrigosScreen() {
   useEffect(() => {
     const fetchAbrigos = async () => {
       try {
-        const response = await axios.get('http://localhost:5079/api/abrigo'); // Altere para produção se necessário
+        const response = await axios.get('http://10.0.2.2:5079/api/abrigo');
+        console.log("Abrigoss:", response.data);
         setAbrigos(response.data);
       } catch (error) {
         console.error('Erro ao buscar abrigos:', error);
