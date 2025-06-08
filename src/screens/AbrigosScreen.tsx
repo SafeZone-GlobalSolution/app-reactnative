@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { API_URL } from '@env';
 
 interface Abrigo {
   id: number;
@@ -15,7 +16,7 @@ export default function AbrigosScreen() {
   useEffect(() => {
     const fetchAbrigos = async () => {
       try {
-        const response = await axios.get('http://10.0.2.2:5079/api/abrigo');
+        const response = await axios.get(`${API_URL}/abrigo`);
         console.log("Abrigoss:", response.data);
         setAbrigos(response.data);
       } catch (error) {

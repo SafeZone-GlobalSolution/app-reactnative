@@ -37,8 +37,9 @@ src/services/api.ts
 Substitua:
 baseURL: 'http://localhost:5079/api'
 (se estiver rodando em emulador Android):
-Rode no terminal, ipconfig e vc saberá seu Ipv4, substituia por seu ip.
-baseURL: 'http://10.0.2.2:5079/api' (este é um exemplo com o ip do meu computador, no qual rodei o projeto pelo emulador)
+Rode no terminal, ipconfig e vc saberá seu Ipv4, substituia por seu ip no arquivo .env
+API_URL=http://[IP_DA_SUA_MAQUINA]:5079/api
+
 
 4. Execute a API
 Abra uma nova janela e clone o repositorio da API 

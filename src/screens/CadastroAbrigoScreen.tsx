@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { ActivityIndicator } from 'react-native';
-
+import { API_URL } from '@env';
 
 export default function CadastroAbrigoScreen() {
   const navigation = useNavigation();
@@ -31,7 +31,7 @@ export default function CadastroAbrigoScreen() {
  };
 
  try {
-   await axios.post('http://10.0.2.2:5079/api/abrigo', novoAbrigo);
+   await axios.post(`${API_URL}/abrigo`, novoAbrigo);
    Alert.alert('Sucesso', 'Abrigo cadastrado com sucesso!');
    navigation.goBack();
  } catch (error) {
